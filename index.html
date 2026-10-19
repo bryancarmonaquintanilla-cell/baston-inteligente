@@ -1,0 +1,436 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conoce nuestro bastón blanco inteligente con sensores para apoyar la movilidad de personas con discapacidad visual.">
+
+    <title>Bastón Inteligente | Movilidad y autonomía</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #202b38;
+            background: #f5f7fa;
+        }
+
+        header {
+            background: #102a43;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        header h1 {
+            font-size: 23px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 18px;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            text-decoration: underline;
+        }
+
+        .hero {
+            background: #173f5f;
+            color: white;
+            padding: 75px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1 1 300px;
+        }
+
+        .hero h2 {
+            font-size: clamp(30px, 5vw, 46px);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .product-image {
+            flex: 1 1 260px;
+            min-height: 260px;
+            max-width: 420px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 14px;
+            background: white;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 8px;
+            background: #ffd166;
+            color: #172b4d;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .button:hover,
+        .button:focus {
+            background: #ffe29a;
+            outline: 3px solid white;
+            outline-offset: 2px;
+        }
+
+        section {
+            padding: 55px 8%;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 25px;
+            color: #102a43;
+        }
+
+        .intro {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #102a4312;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #173f5f;
+        }
+
+        .icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .price-box {
+            max-width: 550px;
+            margin: auto;
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 3px 12px #102a4312;
+        }
+
+        .price {
+            color: #087443;
+            font-size: 38px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .payments {
+            max-width: 650px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .payments h3 {
+            margin: 20px 0 8px;
+        }
+
+        .payments p {
+            margin-bottom: 10px;
+        }
+
+        .qr-image {
+            display: block;
+            width: 190px;
+            height: 190px;
+            object-fit: contain;
+            margin: 15px auto;
+            border: 1px solid #ddd;
+        }
+
+        .notice {
+            padding: 12px;
+            background: #fff4d6;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        .contact {
+            text-align: center;
+            background: #e5edf5;
+        }
+
+        footer {
+            background: #102a43;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer a {
+            color: white;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid #d97706;
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 18px 5%;
+            }
+
+            nav a {
+                margin: 0 12px 0 0;
+            }
+
+            .hero,
+            section {
+                padding: 40px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Bastón Inteligente</h1>
+
+        <nav aria-label="Navegación principal">
+            <a href="#producto">Producto</a>
+            <a href="#precio">Precio</a>
+            <a href="#pagos">Pagos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero" id="producto">
+            <div class="hero-text">
+                <h2>Más autonomía para desplazarte</h2>
+
+                <p>
+                    Un bastón blanco inteligente con sensores,
+                    diseñado para apoyar la movilidad de personas
+                    ciegas o con discapacidad visual.
+                </p>
+
+                <a class="button" href="#precio">
+                    Conocer el producto
+                </a>
+            </div>
+
+            <!-- Reemplaza esta imagen por una foto real del prototipo -->
+            <img
+                class="product-image"
+                src="https://placehold.co/500x400/ffffff/173f5f?text=Baston+Inteligente"
+                alt="Imagen ilustrativa del bastón inteligente; no representa necesariamente el prototipo final."
+            >
+        </section>
+
+        <section>
+            <h2>¿Qué ofrece nuestro bastón?</h2>
+
+            <div class="intro">
+                <p>
+                    Buscamos combinar el bastón blanco tradicional
+                    con tecnología de sensores para apoyar la
+                    detección de obstáculos y favorecer una movilidad
+                    más autónoma.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="features">
+
+                <article class="card">
+                    <div class="icon" aria-hidden="true">📡</div>
+                    <h3>Sensores integrados</h3>
+                    <p>
+                        El prototipo incorpora sensores para detectar
+                        obstáculos dentro del rango que permita su
+                        diseño y configuración.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="icon" aria-hidden="true">🦯</div>
+                    <h3>Diseño práctico</h3>
+                    <p>
+                        Un concepto basado en el bastón blanco,
+                        con componentes tecnológicos integrados.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="icon" aria-hidden="true">🤝</div>
+                    <h3>Movilidad y autonomía</h3>
+                    <p>
+                        Una solución complementaria para apoyar
+                        el desplazamiento, sin reemplazar las técnicas
+                        de orientación y movilidad.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="precio">
+            <h2>Adquiere tu bastón inteligente</h2>
+
+            <div class="price-box">
+                <h3>Bastón Blanco Inteligente</h3>
+
+                <!-- Cambia el precio cuando lo definas -->
+                <p class="price">S/ 250.00</p>
+
+                <p>
+                    Precio de demostración. Modifícalo según
+                    el costo real de tu producto.
+                </p>
+
+                <br>
+
+                <!-- Reemplaza el número por tu WhatsApp.
+                     Usa código de país y número, sin + ni espacios. -->
+                <a
+                    class="button"
+                    href="https://wa.me/51999999999?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20el%20bast%C3%B3n%20inteligente."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Consultar y realizar pedido
+                </a>
+            </div>
+        </section>
+
+        <section id="pagos">
+            <h2>Medios de pago</h2>
+
+            <div class="payments">
+                <h3>1. Paga con Yape</h3>
+
+                <p>
+                    Escanea el QR de pago con tu aplicación Yape
+                    y verifica el nombre del destinatario antes
+                    de confirmar la operación.
+                </p>
+
+                <!-- Coloca tu archivo real qr-yape.png en el repositorio.
+                     No uses un QR de ejemplo para recibir dinero. -->
+                <img
+                    class="qr-image"
+                    src="imagenes/qr-yape.png"
+                    alt="Código QR de Yape del vendedor"
+                >
+
+                <p style="text-align: center;">
+                    <strong>QR de demostración:</strong>
+                    reemplazar antes de publicar para clientes.
+                </p>
+
+                <h3>2. Transferencia bancaria BCP</h3>
+
+                <p>
+                    Banco: BCP
+                </p>
+
+                <p>
+                    Titular: NOMBRE DEL TITULAR
+                </p>
+
+                <p>
+                    Número de cuenta: XXXX-XXXX-XXXX
+                </p>
+
+                <p>
+                    Número de cuenta interbancaria (CCI):
+                    XXXX-XXXX-XXXX-XXXX-XX
+                </p>
+
+                <div class="notice">
+                    Estos datos son marcadores de posición,
+                    no datos bancarios reales. Sustitúyelos por
+                    los datos que decidas compartir con tus clientes.
+                    Confirma cada abono directamente en tu banco.
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contacto">
+            <h2>¿Tienes alguna consulta?</h2>
+
+            <p>
+                Escríbenos para conocer más sobre el producto,
+                sus características y las opciones de entrega.
+            </p>
+
+            <br>
+
+            <a
+                class="button"
+                href="https://wa.me/51999999999?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20bast%C3%B3n%20inteligente."
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Contactar por WhatsApp
+            </a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Bastón Inteligente. Proyecto en desarrollo.</p>
+        <p>La información y las imágenes son ilustrativas.</p>
+    </footer>
+
+</body>
+</html>
