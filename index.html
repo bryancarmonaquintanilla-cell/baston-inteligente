@@ -4,11 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Conoce nuestro bastón blanco inteligente con sensores para apoyar la movilidad de personas con discapacidad visual.">
 
-    <title>Bastón Inteligente | Movilidad y autonomía</title>
+    <meta name="description" content="Descubre nuestro concepto de bastón blanco inteligente con sensores, diseñado para apoyar la movilidad y autonomía de personas con discapacidad visual.">
+
+    <meta name="theme-color" content="#102a43">
+
+    <title>Bastón Inteligente | Tecnología para tu movilidad</title>
 
     <style>
+        :root {
+            --navy: #102a43;
+            --blue: #173f5f;
+            --turquoise: #16b8a6;
+            --turquoise-dark: #087f76;
+            --light: #f3f7fa;
+            --white: #ffffff;
+            --text: #243746;
+            --muted: #607484;
+            --border: #dce6ec;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -17,221 +32,473 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 85px;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #202b38;
-            background: #f5f7fa;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid #f4bd50;
+            outline-offset: 4px;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
         }
 
         header {
-            background: #102a43;
+            background: var(--navy);
             color: white;
-            padding: 20px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 3px 15px #00000020;
+        }
+
+        .navbar {
+            min-height: 76px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 20px;
             flex-wrap: wrap;
-            gap: 12px;
+            padding: 14px 0;
         }
 
-        header h1 {
-            font-size: 23px;
+        .brand {
+            font-size: 21px;
+            font-weight: 800;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .brand span {
+            color: var(--turquoise);
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 18px;
+            font-size: 14px;
         }
 
-        nav a:hover,
-        nav a:focus {
-            text-decoration: underline;
+        nav a:hover {
+            color: #73e4d8;
         }
 
         .hero {
-            background: #173f5f;
+            background: linear-gradient(125deg, #102a43, #17516b);
             color: white;
-            padding: 75px 8%;
-            display: flex;
+            padding: 82px 0;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
             align-items: center;
-            justify-content: space-between;
-            gap: 35px;
-            flex-wrap: wrap;
+            gap: 55px;
         }
 
-        .hero-text {
-            flex: 1 1 300px;
+        .eyebrow {
+            display: inline-block;
+            color: #83f0df;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
         }
 
-        .hero h2 {
-            font-size: clamp(30px, 5vw, 46px);
-            line-height: 1.2;
-            margin-bottom: 20px;
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 58px);
+            line-height: 1.13;
+            letter-spacing: -1.5px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: #69e1d2;
         }
 
         .hero p {
             font-size: 18px;
-            margin-bottom: 25px;
+            color: #e0edf4;
+            margin-bottom: 28px;
+            max-width: 570px;
         }
 
-        .product-image {
-            flex: 1 1 260px;
-            min-height: 260px;
-            max-width: 420px;
+        .hero-image {
             width: 100%;
-            object-fit: cover;
-            border-radius: 14px;
-            background: white;
+            height: 390px;
+            object-fit: contain;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 12px;
         }
 
         .button {
             display: inline-block;
-            padding: 13px 22px;
-            border-radius: 8px;
-            background: #ffd166;
-            color: #172b4d;
             text-decoration: none;
+            border: 0;
+            border-radius: 9px;
+            padding: 13px 22px;
             font-weight: bold;
-            border: 2px solid transparent;
+            font-size: 15px;
             cursor: pointer;
-            font-size: 16px;
+            transition: transform 0.2s, background 0.2s;
         }
 
-        .button:hover,
-        .button:focus {
-            background: #ffe29a;
-            outline: 3px solid white;
-            outline-offset: 2px;
+        .button:hover {
+            transform: translateY(-2px);
         }
 
-        section {
-            padding: 55px 8%;
+        .button-primary {
+            background: var(--turquoise);
+            color: #082d35;
         }
 
-        section h2 {
+        .button-primary:hover {
+            background: #57dfd0;
+        }
+
+        .button-light {
+            background: white;
+            color: var(--navy);
+        }
+
+        .button-outline {
+            color: var(--navy);
+            background: transparent;
+            border: 1px solid var(--border);
+        }
+
+        .section {
+            padding: 75px 0;
+        }
+
+        .section-white {
+            background: white;
+        }
+
+        .section-heading {
             text-align: center;
-            font-size: 30px;
-            margin-bottom: 25px;
-            color: #102a43;
+            max-width: 750px;
+            margin: 0 auto 42px;
         }
 
-        .intro {
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
+        .section-heading .eyebrow {
+            color: var(--turquoise-dark);
+            margin-bottom: 8px;
         }
 
-        .features {
+        .section-heading h2 {
+            color: var(--navy);
+            font-size: clamp(27px, 4vw, 38px);
+            line-height: 1.25;
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+        .benefits {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 27px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            box-shadow: 0 5px 20px #102a4308;
+        }
+
+        .benefit-icon {
+            width: 54px;
+            height: 54px;
+            display: grid;
+            place-items: center;
+            background: #dcf8f3;
+            border-radius: 14px;
+            font-size: 27px;
+            margin-bottom: 19px;
+        }
+
+        .benefit-card h3 {
+            color: var(--navy);
+            margin-bottom: 9px;
+            font-size: 19px;
+        }
+
+        .benefit-card p {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .note {
+            background: #fff7df;
+            border-left: 4px solid #e6b43e;
+            border-radius: 5px;
+            padding: 15px 18px;
+            margin-top: 26px;
+            font-size: 14px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
 
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 3px 12px #102a4312;
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-            color: #173f5f;
-        }
-
-        .icon {
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
-
-        .price-box {
-            max-width: 550px;
-            margin: auto;
-            text-align: center;
-            background: white;
-            padding: 30px;
+        .gallery figure {
             border-radius: 14px;
-            box-shadow: 0 3px 12px #102a4312;
+            overflow: hidden;
+            background: white;
+            border: 1px solid var(--border);
         }
 
-        .price {
-            color: #087443;
-            font-size: 38px;
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+            background: #edf3f6;
+            display: block;
+        }
+
+        .gallery figcaption {
+            padding: 15px;
             font-weight: bold;
-            margin: 15px 0;
+            color: var(--navy);
         }
 
-        .payments {
+        .video-panel {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px #102a4310;
+        }
+
+        .video-container {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #071b2b;
+        }
+
+        .video-container iframe,
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border: 0;
+        }
+
+        .video-caption {
+            padding: 24px;
+        }
+
+        .video-caption h3 {
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .video-caption p {
+            color: var(--muted);
+        }
+
+        .purchase-section {
+            background: linear-gradient(135deg, #e4faf6, #f3f7fa);
+        }
+
+        .purchase-card {
             max-width: 650px;
             margin: auto;
             background: white;
-            padding: 25px;
-            border-radius: 12px;
+            border-radius: 20px;
+            padding: 38px;
+            text-align: center;
+            box-shadow: 0 10px 40px #102a4310;
+            border: 1px solid var(--border);
         }
 
-        .payments h3 {
-            margin: 20px 0 8px;
+        .purchase-card h3 {
+            color: var(--navy);
+            font-size: 25px;
         }
 
-        .payments p {
+        .price {
+            color: var(--turquoise-dark);
+            font-size: 43px;
+            font-weight: 800;
+            margin: 12px 0;
+        }
+
+        .muted {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .purchase-card .button {
+            margin-top: 20px;
+        }
+
+        .payment-layout {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .payment-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 26px;
+            margin-bottom: 20px;
+        }
+
+        .payment-card h3 {
+            color: var(--navy);
             margin-bottom: 10px;
         }
 
+        .payment-card p {
+            margin: 8px 0;
+        }
+
         .qr-image {
-            display: block;
-            width: 190px;
-            height: 190px;
+            width: 210px;
+            height: 210px;
             object-fit: contain;
-            margin: 15px auto;
-            border: 1px solid #ddd;
+            display: block;
+            margin: 20px auto;
+            border: 1px solid var(--border);
+            border-radius: 10px;
         }
 
-        .notice {
-            padding: 12px;
-            background: #fff4d6;
-            border-radius: 8px;
-            font-size: 14px;
-            margin-top: 15px;
+        .bank-data {
+            background: #f4f8fa;
+            border-radius: 10px;
+            padding: 18px;
+            margin: 15px 0;
         }
 
-        .contact {
+        .bank-data p {
+            overflow-wrap: anywhere;
+        }
+
+        .copy-button {
+            margin-top: 10px;
+        }
+
+        .contact-section {
+            background: var(--navy);
+            color: white;
             text-align: center;
-            background: #e5edf5;
+        }
+
+        .contact-section h2 {
+            font-size: clamp(28px, 4vw, 38px);
+            margin-bottom: 14px;
+        }
+
+        .contact-section p {
+            color: #dceaf2;
+            margin-bottom: 22px;
         }
 
         footer {
-            background: #102a43;
-            color: white;
+            background: #091d2e;
+            color: #dceaf2;
+            padding: 25px 0;
             text-align: center;
-            padding: 25px;
+            font-size: 13px;
         }
 
-        footer a {
-            color: white;
+        footer p + p {
+            margin-top: 6px;
         }
 
-        a:focus-visible,
-        button:focus-visible {
-            outline: 3px solid #d97706;
-            outline-offset: 3px;
+        #copy-status {
+            margin-top: 12px;
+            color: var(--turquoise-dark);
+            font-weight: bold;
         }
 
-        @media (max-width: 600px) {
-            header {
-                padding: 18px 5%;
+        @media (max-width: 800px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .hero {
+                padding: 55px 0;
+            }
+
+            .hero-image {
+                height: 320px;
+            }
+
+            .benefits,
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 540px) {
+            .navbar {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            nav {
+                gap: 12px;
             }
 
             nav a {
-                margin: 0 12px 0 0;
+                font-size: 13px;
             }
 
-            .hero,
-            section {
-                padding: 40px 5%;
+            .benefits,
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 52px 0;
+            }
+
+            .purchase-card {
+                padding: 25px 18px;
+            }
+
+            .hero-image {
+                height: 260px;
             }
         }
     </style>
@@ -239,198 +506,498 @@
 
 <body>
 
-    <header>
-        <h1>Bastón Inteligente</h1>
+<header>
+    <div class="container navbar">
+        <a class="brand" href="#inicio">
+            BASTÓN<span>+</span>
+        </a>
 
-        <nav aria-label="Navegación principal">
-            <a href="#producto">Producto</a>
-            <a href="#precio">Precio</a>
+        <nav aria-label="Menú principal">
+            <a href="#beneficios">Beneficios</a>
+            <a href="#galeria">Galería</a>
+            <a href="#video">Video</a>
+            <a href="#precio">Comprar</a>
             <a href="#pagos">Pagos</a>
-            <a href="#contacto">Contacto</a>
         </nav>
-    </header>
+    </div>
+</header>
 
-    <main>
+<main>
 
-        <section class="hero" id="producto">
-            <div class="hero-text">
-                <h2>Más autonomía para desplazarte</h2>
+    <!-- PRESENTACIÓN PRINCIPAL -->
+    <section class="hero" id="inicio">
+        <div class="container hero-grid">
+
+            <div>
+                <span class="eyebrow">Tecnología aplicada a la movilidad</span>
+
+                <h1>
+                    Una nueva forma de explorar el entorno con
+                    <span>mayor autonomía.</span>
+                </h1>
 
                 <p>
-                    Un bastón blanco inteligente con sensores,
-                    diseñado para apoyar la movilidad de personas
-                    ciegas o con discapacidad visual.
+                    Conoce nuestro concepto de bastón blanco
+                    inteligente con sensores, desarrollado para
+                    apoyar la movilidad de personas ciegas o
+                    con discapacidad visual.
                 </p>
 
-                <a class="button" href="#precio">
-                    Conocer el producto
+                <a class="button button-primary" href="#video">
+                    Conoce cómo funciona
+                </a>
+
+                <a class="button button-light" href="#precio"
+                   style="margin-left: 8px;">
+                    Ver producto
                 </a>
             </div>
 
-            <!-- Reemplaza esta imagen por una foto real del prototipo -->
+            <!-- Sustituye por una fotografía real del prototipo -->
             <img
-                class="product-image"
-                src="https://placehold.co/500x400/ffffff/173f5f?text=Baston+Inteligente"
-                alt="Imagen ilustrativa del bastón inteligente; no representa necesariamente el prototipo final."
+                class="hero-image"
+                src="imagenes/baston-frontal.jpg"
+                alt="Bastón blanco inteligente. Sustituir por una fotografía real del prototipo."
             >
-        </section>
 
-        <section>
-            <h2>¿Qué ofrece nuestro bastón?</h2>
+        </div>
+    </section>
 
-            <div class="intro">
+    <!-- PROPUESTA DE VALOR -->
+    <section class="section section-white" id="beneficios">
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="eyebrow">Nuestra propuesta</span>
+
+                <h2>Tecnología con un propósito</h2>
+
                 <p>
-                    Buscamos combinar el bastón blanco tradicional
-                    con tecnología de sensores para apoyar la
-                    detección de obstáculos y favorecer una movilidad
-                    más autónoma.
+                    Explorar nuevas soluciones tecnológicas
+                    para acompañar a las personas en sus
+                    desplazamientos cotidianos.
                 </p>
             </div>
-        </section>
 
-        <section>
-            <div class="features">
+            <div class="benefits">
 
-                <article class="card">
-                    <div class="icon" aria-hidden="true">📡</div>
-                    <h3>Sensores integrados</h3>
+                <article class="benefit-card">
+                    <div class="benefit-icon" aria-hidden="true">📡</div>
+
+                    <h3>Detección mediante sensores</h3>
+
                     <p>
-                        El prototipo incorpora sensores para detectar
-                        obstáculos dentro del rango que permita su
-                        diseño y configuración.
+                        El prototipo incorpora sensores destinados
+                        a detectar obstáculos dentro del rango
+                        de funcionamiento que se valide durante
+                        las pruebas.
                     </p>
                 </article>
 
-                <article class="card">
-                    <div class="icon" aria-hidden="true">🦯</div>
-                    <h3>Diseño práctico</h3>
+                <article class="benefit-card">
+                    <div class="benefit-icon" aria-hidden="true">🦯</div>
+
+                    <h3>Movilidad complementaria</h3>
+
                     <p>
-                        Un concepto basado en el bastón blanco,
-                        con componentes tecnológicos integrados.
+                        Busca complementar el uso del bastón blanco
+                        tradicional mediante la incorporación
+                        de tecnología.
                     </p>
                 </article>
 
-                <article class="card">
-                    <div class="icon" aria-hidden="true">🤝</div>
-                    <h3>Movilidad y autonomía</h3>
+                <article class="benefit-card">
+                    <div class="benefit-icon" aria-hidden="true">🤝</div>
+
+                    <h3>Autonomía personal</h3>
+
                     <p>
-                        Una solución complementaria para apoyar
-                        el desplazamiento, sin reemplazar las técnicas
-                        de orientación y movilidad.
+                        Una propuesta orientada a apoyar la
+                        movilidad y favorecer la confianza
+                        durante el desplazamiento.
+                    </p>
+                </article>
+
+                <article class="benefit-card">
+                    <div class="benefit-icon" aria-hidden="true">🔎</div>
+
+                    <h3>Innovación funcional</h3>
+
+                    <p>
+                        Integra el concepto de un bastón blanco
+                        con componentes electrónicos para explorar
+                        nuevas posibilidades de asistencia.
+                    </p>
+                </article>
+
+                <article class="benefit-card">
+                    <div class="benefit-icon" aria-hidden="true">👣</div>
+
+                    <h3>Enfoque en el usuario</h3>
+
+                    <p>
+                        El diseño debe priorizar la facilidad
+                        de uso, la comodidad y las necesidades
+                        reales de las personas.
+                    </p>
+                </article>
+
+                <article class="benefit-card">
+                    <div class="benefit-icon" aria-hidden="true">💡</div>
+
+                    <h3>Desarrollo tecnológico</h3>
+
+                    <p>
+                        Un proyecto en evolución que busca
+                        combinar tecnología y movilidad
+                        con un enfoque práctico.
                     </p>
                 </article>
 
             </div>
-        </section>
 
-        <section id="precio">
-            <h2>Adquiere tu bastón inteligente</h2>
+            <div class="note">
+                <strong>Información importante:</strong>
+                las características descritas son una presentación
+                preliminar del proyecto. El rango de los sensores,
+                la autonomía de la batería, los mecanismos de alerta
+                y otras prestaciones deberán confirmarse con las
+                especificaciones y pruebas del prototipo.
+                El bastón no debe considerarse una garantía
+                de seguridad ni un sustituto de la orientación
+                y movilidad habituales.
+            </div>
 
-            <div class="price-box">
+        </div>
+    </section>
+
+    <!-- GALERÍA DE IMÁGENES -->
+    <section class="section" id="galeria">
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="eyebrow">Conoce el producto</span>
+
+                <h2>Cada detalle cuenta</h2>
+
+                <p>
+                    Explora el diseño, los componentes y el
+                    funcionamiento del bastón inteligente.
+                </p>
+            </div>
+
+            <div class="gallery">
+
+                <figure>
+                    <img
+                        src="imagenes/baston-frontal.jpg"
+                        alt="Vista general del bastón inteligente"
+                        loading="lazy"
+                    >
+                    <figcaption>Diseño del producto</figcaption>
+                </figure>
+
+                <figure>
+                    <img
+                        src="imagenes/baston-sensores.jpg"
+                        alt="Detalle de los sensores del prototipo"
+                        loading="lazy"
+                    >
+                    <figcaption>Componentes y sensores</figcaption>
+                </figure>
+
+                <figure>
+                    <img
+                        src="imagenes/baston-en-uso.jpg"
+                        alt="Demostración del bastón inteligente en uso"
+                        loading="lazy"
+                    >
+                    <figcaption>Demostración de uso</figcaption>
+                </figure>
+
+            </div>
+
+            <p class="muted" style="text-align:center; margin-top:20px;">
+                Las fotografías se actualizarán con imágenes reales
+                del producto.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- VIDEO DE DEMOSTRACIÓN -->
+    <section class="section section-white" id="video">
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="eyebrow">Míralo en acción</span>
+
+                <h2>Conoce nuestra propuesta en video</h2>
+
+                <p>
+                    Descubre el diseño, los objetivos y el
+                    funcionamiento del prototipo en una
+                    presentación audiovisual.
+                </p>
+            </div>
+
+            <div class="video-panel">
+
+                <div class="video-container">
+
+                    <!--
+                    OPCIÓN 1: VIDEO DE YOUTUBE
+
+                    Reemplaza ID_DE_TU_VIDEO por el identificador
+                    de tu video de YouTube.
+
+                    Ejemplo de URL:
+                    https://www.youtube.com/watch?v=ABC123xyz
+
+                    Identificador:
+                    ABC123xyz
+
+                    URL para insertar:
+                    https://www.youtube.com/embed/ABC123xyz
+                    -->
+
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/ID_DE_TU_VIDEO"
+                        title="Presentación del bastón inteligente"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+
+                <div class="video-caption">
+                    <h3>Una presentación de nuestro proyecto</h3>
+
+                    <p>
+                        En este espacio podrás presentar el problema
+                        que buscas atender, el diseño del bastón,
+                        una demostración de los sensores y los
+                        beneficios que hayas podido comprobar.
+                    </p>
+
+                    <p style="margin-top:10px;">
+                        Duración estimada: 5 minutos.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PRECIO Y PEDIDO -->
+    <section class="section purchase-section" id="precio">
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="eyebrow">Conoce nuestra propuesta</span>
+                <h2>¿Te interesa nuestro bastón inteligente?</h2>
+                <p>
+                    Contáctanos para consultar la disponibilidad,
+                    las características y las condiciones de entrega.
+                </p>
+            </div>
+
+            <div class="purchase-card">
+
                 <h3>Bastón Blanco Inteligente</h3>
 
-                <!-- Cambia el precio cuando lo definas -->
+                <!-- PRECIO DE EJEMPLO: MODIFÍCALO -->
                 <p class="price">S/ 250.00</p>
 
-                <p>
-                    Precio de demostración. Modifícalo según
-                    el costo real de tu producto.
+                <p class="muted">
+                    Precio provisional para la versión de prueba.
+                    Confirmar precio y disponibilidad antes de comprar.
                 </p>
 
-                <br>
-
-                <!-- Reemplaza el número por tu WhatsApp.
-                     Usa código de país y número, sin + ni espacios. -->
                 <a
-                    class="button"
+                    class="button button-primary"
                     href="https://wa.me/51999999999?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20el%20bast%C3%B3n%20inteligente."
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    Consultar y realizar pedido
+                    Consultar por WhatsApp
                 </a>
+
             </div>
-        </section>
 
-        <section id="pagos">
-            <h2>Medios de pago</h2>
+        </div>
+    </section>
 
-            <div class="payments">
-                <h3>1. Paga con Yape</h3>
+    <!-- MEDIOS DE PAGO -->
+    <section class="section section-white" id="pagos">
+        <div class="container">
 
-                <p>
-                    Escanea el QR de pago con tu aplicación Yape
-                    y verifica el nombre del destinatario antes
-                    de confirmar la operación.
-                </p>
+            <div class="section-heading">
+                <span class="eyebrow">Proceso de compra</span>
 
-                <!-- Coloca tu archivo real qr-yape.png en el repositorio.
-                     No uses un QR de ejemplo para recibir dinero. -->
-                <img
-                    class="qr-image"
-                    src="imagenes/qr-yape.png"
-                    alt="Código QR de Yape del vendedor"
-                >
-
-                <p style="text-align: center;">
-                    <strong>QR de demostración:</strong>
-                    reemplazar antes de publicar para clientes.
-                </p>
-
-                <h3>2. Transferencia bancaria BCP</h3>
+                <h2>Medios de pago</h2>
 
                 <p>
-                    Banco: BCP
+                    Consulta los medios disponibles y verifica
+                    los datos del destinatario antes de realizar
+                    cualquier operación.
                 </p>
+            </div>
 
-                <p>
-                    Titular: NOMBRE DEL TITULAR
-                </p>
+            <div class="payment-layout">
 
-                <p>
-                    Número de cuenta: XXXX-XXXX-XXXX
-                </p>
+                <div class="payment-card">
+                    <h3>Pago mediante Yape</h3>
 
-                <p>
-                    Número de cuenta interbancaria (CCI):
-                    XXXX-XXXX-XXXX-XXXX-XX
-                </p>
+                    <p>
+                        Escanea el código QR de tu vendedor
+                        desde la aplicación Yape y verifica
+                        el nombre que aparece antes de confirmar.
+                    </p>
 
-                <div class="notice">
-                    Estos datos son marcadores de posición,
-                    no datos bancarios reales. Sustitúyelos por
-                    los datos que decidas compartir con tus clientes.
-                    Confirma cada abono directamente en tu banco.
+                    <!--
+                    Sube tu QR auténtico a:
+                    imagenes/qr-yape.png
+                    -->
+
+                    <img
+                        class="qr-image"
+                        src="imagenes/qr-yape.png"
+                        alt="Código QR de Yape del vendedor"
+                        loading="lazy"
+                    >
+
+                    <p class="muted" style="text-align:center;">
+                        El QR se actualizará cuando agregues
+                        tu archivo real al repositorio.
+                    </p>
                 </div>
-            </div>
-        </section>
 
-        <section class="contact" id="contacto">
-            <h2>¿Tienes alguna consulta?</h2>
+                <div class="payment-card">
+                    <h3>Transferencia bancaria BCP</h3>
+
+                    <p>
+                        Puedes utilizar los siguientes datos
+                        para una transferencia en soles.
+                    </p>
+
+                    <div class="bank-data">
+
+                        <p>
+                            <strong>Banco:</strong> BCP
+                        </p>
+
+                        <p>
+                            <strong>Moneda:</strong> Soles
+                        </p>
+
+                        <p>
+                            <strong>Titular:</strong>
+                            Bryan Alexander Carmona Quintanilla
+                        </p>
+
+                        <p>
+                            <strong>Número de cuenta:</strong>
+                            <span id="account-number">19194938408079</span>
+                        </p>
+
+                        <p>
+                            <strong>CCI:</strong>
+                            <span id="cci-number">00219119493840807959</span>
+                        </p>
+
+                        <button
+                            class="button button-outline copy-button"
+                            type="button"
+                            onclick="copiarDatos()"
+                        >
+                            Copiar datos bancarios
+                        </button>
+
+                        <p id="copy-status" role="status"
+                           aria-live="polite"></p>
+
+                    </div>
+
+                    <div class="note">
+                        Antes de confirmar un pedido, verifica
+                        el abono directamente en tu cuenta.
+                        No basta con recibir una captura
+                        de pantalla del comprobante.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section contact-section" id="contacto">
+        <div class="container">
+
+            <span class="eyebrow">Estamos para ayudarte</span>
+
+            <h2>¿Quieres conocer más?</h2>
 
             <p>
-                Escríbenos para conocer más sobre el producto,
-                sus características y las opciones de entrega.
+                Escríbenos para consultar sobre el prototipo,
+                sus características y las condiciones de compra.
             </p>
 
-            <br>
-
             <a
-                class="button"
-                href="https://wa.me/51999999999?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20bast%C3%B3n%20inteligente."
+                class="button button-primary"
+                href="https://wa.me/51999999999?text=Hola%2C%20quiero%20conocer%20m%C3%A1s%20sobre%20el%20bast%C3%B3n%20inteligente."
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                Contactar por WhatsApp
+                Hablar por WhatsApp
             </a>
-        </section>
 
-    </main>
+        </div>
+    </section>
 
-    <footer>
-        <p>© 2026 Bastón Inteligente. Proyecto en desarrollo.</p>
-        <p>La información y las imágenes son ilustrativas.</p>
-    </footer>
+</main>
+
+<footer>
+    <div class="container">
+        <p>
+            © 2026 Bastón Inteligente. Proyecto en desarrollo.
+        </p>
+
+        <p>
+            Información preliminar del producto. Las prestaciones
+            definitivas dependerán de las especificaciones y pruebas.
+        </p>
+    </div>
+</footer>
+
+<script>
+    async function copiarDatos() {
+        const cuenta = document.getElementById("account-number").textContent;
+        const cci = document.getElementById("cci-number").textContent;
+        const titular = "Bryan Alexander Carmona Quintanilla";
+
+        const datos =
+            "Banco: BCP\n" +
+            "Moneda: Soles\n" +
+            "Titular: " + titular + "\n" +
+            "Número de cuenta: " + cuenta + "\n" +
+            "CCI: " + cci;
+
+        const estado = document.getElementById("copy-status");
+
+        try {
+            await navigator.clipboard.writeText(datos);
+            estado.textContent = "Datos bancarios copiados.";
+        } catch (error) {
+            estado.textContent =
+                "No se pudo copiar automáticamente. Selecciona y copia los datos manualmente.";
+        }
+    }
+</script>
 
 </body>
 </html>
